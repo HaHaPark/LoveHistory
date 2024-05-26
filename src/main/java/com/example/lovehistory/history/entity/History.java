@@ -1,2 +1,4 @@
-package com.example.lovehistory.history.entity;public class History {
+package com.example.lovehistory.history.entity;
+
+public class History {
 }

@@ -1,2 +1,4 @@
-package com.example.lovehistory.user.entity;public class User {
+package com.example.lovehistory.user.entity;
+
+public class User {
 }
