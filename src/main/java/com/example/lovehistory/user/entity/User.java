@@ -32,15 +32,27 @@ public class User {
     @OneToMany(mappedBy = "user1", cascade = CascadeType.ALL)
     private List<Couple> couplesAsUser1;
 
+
     @OneToMany(mappedBy = "user2", cascade = CascadeType.ALL)
     private List<Couple> couplesAsUser2;
 
+
     @Builder
-    public User(Long id, String userId, String username, String password, String phone) {
-        this.id = id;
+    public User( String userId, String username, String password, String phone) {
+
         this.userId = userId;
         this.username = username;
         this.password = password;
         this.phone = phone;
+    }
+
+    //편의 메서드
+    public void update( String userId, String username,  String phone, String password ) {
+
+        this.userId = userId;
+        this.username = username;
+        this.password = phone;
+        this.phone = password;
+
     }
 }
