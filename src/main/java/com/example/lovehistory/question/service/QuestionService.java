@@ -44,10 +44,11 @@ public class QuestionService {
                 .collect(Collectors.toList());
     }
 
-    public Question getRandomQuestion() {
+    public QuestionRes getRandomQuestion() {
         Random random = new Random();
-        Long randomQuestionId = (long) (random.nextInt(10) + 1); // 1~10 사이의 랜덤 숫자 생성
+        Long randomQuestionId = (long) (random.nextInt(5) + 1); // 1~10 사이의 랜덤 숫자 생성
         Optional<Question> questionOpt = questionRepository.findById(randomQuestionId);
-        return questionOpt.orElseThrow(() -> new IllegalArgumentException("Invalid questionId"));
+        Question question = questionOpt.orElseThrow(() -> new IllegalArgumentException("Invalid questionId"));
+        return new QuestionRes(question.getId(), question.getQuestionContent());
     }
 }

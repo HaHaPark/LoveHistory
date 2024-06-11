@@ -20,7 +20,7 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long questionId;
 
-    private String questionContent;
+        private String questionContent;
 
     @OneToMany(mappedBy = "question")
     private List<History> datingHistories;

@@ -6,6 +6,7 @@ import com.example.lovehistory.couple.entity.Couple;
 import com.example.lovehistory.question.entity.Question;
 import jakarta.persistence.*;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +16,7 @@ import java.time.LocalDate;
 @Entity
 @NoArgsConstructor
 @Getter
+@Data
 public class History {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,13 +47,6 @@ public class History {
 
     }
 
-    public void setQuestion(Question question) {
-        this.question = question;
-    }
-
-    public void setCouple(Couple couple) {
-        this.couple = couple;
-    }
 
 
     // Add constructors, Getters, Setters (if needed), etc.
